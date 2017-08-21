@@ -14,6 +14,7 @@
       });
 
       Twilio.Device.error(function (error) {
+        console.log('error', error);
         log('Twilio.Device Error: ' + error.message);
       });
 
