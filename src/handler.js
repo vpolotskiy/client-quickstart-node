@@ -34,12 +34,10 @@ exports.voiceResponse = function voiceResponse(toNumber) {
     const attr = isAValidPhoneNumber(toNumber) ? 'number' : 'client';
 
     if (attr === 'number') {
-      twiml.say(`Start calling to ${toNumber}!`);
       const dial = twiml.dial({
         callerId: config.callerId
       });
       dial.number(toNumber);
-      twiml.say(`End calling to ${toNumber}!`);
     } else {
       twiml.dial({
         [attr]: toNumber,
