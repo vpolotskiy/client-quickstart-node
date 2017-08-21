@@ -35,7 +35,9 @@ exports.voiceResponse = function voiceResponse(toNumber) {
 
     if (attr === 'number') {
       twiml.dial();
+      twiml.say(`Start calling to ${toNumber}!`);
       twiml.number(toNumber);
+      twiml.say(`End calling to ${toNumber}!`);
     } else {
       twiml.dial({
         [attr]: toNumber,
