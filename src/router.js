@@ -14,6 +14,8 @@ router.get('/token', (req, res) => {
 
 router.post('/voice', (req, res) => {
   res.set('Content-Type', 'text/xml');
+  console.log('req.body', req.body);
+  console.log('req.body.To', req.body.To);
   const result = voiceResponse(req.body.To);
   console.log('/voice', result);
   res.send(result);
