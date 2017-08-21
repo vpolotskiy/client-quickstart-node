@@ -34,7 +34,7 @@ exports.voiceResponse = function voiceResponse(toNumber) {
     const attr = isAValidPhoneNumber(toNumber) ? 'number' : 'client';
 
     if (attr === 'number') {
-      twiml.dial({ callerId: config.callerId });
+      twiml.dial();
       twiml.number(toNumber);
     } else {
       twiml.dial({
